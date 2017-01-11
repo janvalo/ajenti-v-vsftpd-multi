@@ -1,0 +1,53 @@
+<body binder:context="config">
+    <pad>
+        <vc>
+            <formgroup text="{FTP Users}">
+                <vc>
+                    <bind:collection bind="[users]" id="users">
+                        <dt bind="__items" filtering="False">
+                            <dtr>
+                                <dth text="{Username}" />
+                                <dth text="{Password}" />
+                                <dth text="{Path}" />
+                                <dth width="60" />
+                            </dtr>
+                        </dt>
+                        <bind:template>
+                            <dtr>
+                                <dtd>
+                                    <textbox bind="[username]" />
+                                </dtd>
+                                <dtd>
+                                    <textbox bind="[password]" />
+                                </dtd>
+                                <dtd>
+                                    <pathbox bind="[ftp-path]" directory="True" />
+                                </dtd>
+                                <dtd>
+                                    <hc>
+                                        <tooltip text="{Destroy}">
+                                            <button bind="__delete" icon="trash" warning="{Drop the user?}" style="mini" />
+                                        </tooltip>
+                                    </hc>
+                                </dtd>
+                            </dtr>
+                        </bind:template>
+                    </bind:collection>
+                    <formline text="{Username}">
+                        <label bind="host-prefix"/>
+                        <textbox id="ftp-username" />
+                    </formline>
+                    <formline text="{Password}">
+                        <textbox id="ftp-password" />
+                    </formline>
+                    <formline text="{Path}">
+                        <pathbox id="ftp-new-path" directory="True" />
+                    </formline>
+                    <formline>
+                        <button icon="plus" text="{Create}" id="create-user" />
+                    </formline>
+                </vc>
+            </formgroup>
+        </vc>
+    </pad>
+</body>
