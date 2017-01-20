@@ -4,7 +4,7 @@ This plugin is extended version of the original plugin created by Eugene Pankov 
 
 #Installation
 
-Before the installation you will need to remove the installed FTP plugin from '''/var/lib/ajenti/plugins/'''. Normally it should be either '''vh-vsftpd''' or '''vh-pureftpd'''.
+Before the installation you will need to remove/disable the installed FTP plugin from ***/var/lib/ajenti/plugins/***. Normally it should be ***vh-vsftpd***.
 
 Now clone this repo directly to plugins folder '''/var/lib/ajenti/plugins/'''
 
