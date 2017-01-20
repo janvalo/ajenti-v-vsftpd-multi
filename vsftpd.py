@@ -158,6 +158,9 @@ class VSFTPD (MiscComponent):
             shutil.rmtree(self.config_root_users)
         os.mkdir(self.config_root_users)
 
+        if not os.path.exists(self.userdb_path):
+            open(self.userdb_path, 'w').write('')
+
         pwfile = tempfile.NamedTemporaryFile(delete=False)
         pwpath = pwfile.name
         for website in config.websites:
